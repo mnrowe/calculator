@@ -20,8 +20,6 @@ class App extends Component {
       this.setState({ firstOperand: '' });
     } else {
       switch (value) {
-        case 'AC':
-          this.setState({ firstOperand: '' });
         case '7':
         case '8':
         case '9':
