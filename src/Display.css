@@ -14,14 +14,14 @@
   margin: 20px;
   max-width: 579px;
   padding-right: 2%;
+  overflow: hidden;
 }
 
 .display-text {
   font-size: 24px;
-  overflow: hidden;
   position: relative;
   float: right;
   max-width: 579px;
-  top: 10%;
+  top: 15%;
 }
 
