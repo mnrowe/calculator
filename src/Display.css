@@ -8,7 +8,7 @@
 .display-text {
   background-color: violet;
   color: white;
-  outling: 2px solid black;
+  outline: 2px solid black;
   justify-content: center;
   align-items: center;
   width: 100%;
