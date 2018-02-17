@@ -7,27 +7,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstOperand: '',
-      layout: [
-        7,
-        8,
-        9,
-        '%',
-        4,
-        5,
-        6,
-        'x',
-        1,
-        2,
-        3,
-        '-',
-        0,
-        '.',
-        '+',
-        '=',
-        'AC'
-      ],
-      isClear: false
+      operation: '',
+      layout: [7, 8, 9, '%', 4, 5, 6, 'x', 1, 2, 3, '-', 0, '.', '+', '=', 'AC']
     };
   }
   handleButtonClick(event) {
@@ -37,7 +18,8 @@ class App extends Component {
 
     switch (value) {
       case 'AC':
-        this.setState({ firstOperand: '' });
+        this.setState({ operation: '' });
+        break;
       case '7':
       case '8':
       case '9':
@@ -49,14 +31,24 @@ class App extends Component {
       case '3':
       case '0':
         this.setState(prevState => ({
-          firstOperand: prevState.firstOperand + value
+          operation: prevState.operation + value
         }));
+        break;
+      case '.':
+      case 'x':
+      case '-':
+      case '%':
+      case '+':
+        this.setState(prevState => ({
+          operation: prevState.operation + ` ${value} `
+        }));
+        break;
     }
   }
   render() {
     return (
       <div className="App">
-        <Display value={this.state.firstOperand} />
+        <Display operation={this.state.operation} />
         <Frame
           layout={this.state.layout}
           onClick={event => this.handleButtonClick(event)}
