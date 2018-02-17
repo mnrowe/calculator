@@ -3,6 +3,7 @@
   width: 100%;
   height: 80px;
   display: flex;
+  max-width: 619px;
 }
 
 .display-text {
@@ -14,5 +15,6 @@
   width: 100%;
   margin: 20px;
   text-align: center;
+  max-width: 579px
 }
 
