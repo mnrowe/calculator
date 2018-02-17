@@ -2,20 +2,24 @@ import React, { Component } from 'react';
 import './Button.css';
 
 class Button extends Component {
-  handleClick(event) {
-    console.log(event.target.value);
-  }
+  renderButton() {
+    const { value } = this.props;
 
-  render() {
     return (
       <button
         value={this.props.value}
         onClick={this.props.onClick}
-        className="Button"
+        className={'Button'}
       >
         {this.props.value}
       </button>
     );
+  }
+
+  render() {
+    {
+      return this.renderButton();
+    }
   }
 }
 
