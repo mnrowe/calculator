@@ -7,23 +7,60 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: [],
-      layout: [7, 8, 9, '%', 4, 5, 6, 'x', 1, 2, 3, '-', 0, '.', '+', '=']
+      firstOperand: '',
+      layout: [
+        7,
+        8,
+        9,
+        '%',
+        4,
+        5,
+        6,
+        'x',
+        1,
+        2,
+        3,
+        '-',
+        0,
+        '.',
+        '+',
+        '=',
+        'AC'
+      ],
+      isClear: false
     };
   }
   handleButtonClick(event) {
     const { value } = event.target;
     const numbers = this.state.layout.filter(num => typeof num === 'number');
-    const operators = this.state.layout.filter(num => typeof num === 'string');
-    this.setState({ ...this.state, input: value });
+    const operators = this.state.layout.filter(op => typeof op === 'string');
+
+    switch (value) {
+      case 'AC':
+        this.setState({ firstOperand: '' });
+      case '7':
+      case '8':
+      case '9':
+      case '4':
+      case '5':
+      case '6':
+      case '1':
+      case '2':
+      case '3':
+      case '0':
+        this.setState(prevState => ({
+          firstOperand: prevState.firstOperand + value
+        }));
+    }
   }
   render() {
     return (
       <div className="App">
-        <Display value={this.state.input} />
+        <Display value={this.state.firstOperand} />
         <Frame
           layout={this.state.layout}
           onClick={event => this.handleButtonClick(event)}
+          isClear={this.state.isClear}
         />
       </div>
     );
