@@ -1,0 +1,6 @@
+.Frame {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: red;
+}
+
