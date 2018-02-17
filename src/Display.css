@@ -6,15 +6,22 @@
   max-width: 619px;
 }
 
-.display-text {
+.display-box {
   background-color: violet;
   color: white;
   outline: 2px solid black;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   margin: 20px;
-  text-align: center;
-  max-width: 579px
+  max-width: 579px;
+  padding-right: 2%;
+}
+
+.display-text {
+  font-size: 24px;
+  overflow: hidden;
+  position: relative;
+  float: right;
+  max-width: 579px;
+  top: 10%;
 }
 
