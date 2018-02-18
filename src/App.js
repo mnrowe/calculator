@@ -2,20 +2,23 @@ import React, { Component } from 'react';
 import './App.css';
 import Frame from './Frame';
 import Display from './Display';
+import { calculate } from './operations';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       operation: '',
+      total: '',
+      lastOperator: '',
       layout: [7, 8, 9, '%', 4, 5, 6, 'x', 1, 2, 3, '-', 0, '.', '+', '=', 'AC']
     };
   }
   handleButtonClick(event) {
     const { value } = event.target;
-    const numbers = this.state.layout.filter(num => typeof num === 'number');
-    const operators = this.state.layout.filter(op => typeof op === 'string');
+    const { lastOperator } = this.state;
 
+    debugger;
     switch (value) {
       case 'AC':
         this.setState({ operation: '' });
@@ -34,15 +37,17 @@ class App extends Component {
           operation: prevState.operation + value
         }));
         break;
-      case '.':
+      case '.' && lastOperator !== '.':
       case 'x':
       case '-':
       case '%':
-      case '+':
+      case '+' && lastOperator !== '+':
         this.setState(prevState => ({
-          operation: prevState.operation + ` ${value} `
+          operation: prevState.operation + ` ${value} `,
+          lastOperator: value
         }));
-        break;
+      case '=':
+        calculate(this.state.operation);
     }
   }
   render() {
