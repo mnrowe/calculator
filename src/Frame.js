@@ -5,12 +5,12 @@ import Button from './Button';
 const Frame = props => {
   return (
     <div className="Frame">
-      {props.layout.map(num => {
+      {props.layout.map(item => {
         return (
           <Button
             onClick={event => props.onClick(event)}
-            key={num}
-            value={num}
+            key={item}
+            value={item}
           />
         );
       })}
