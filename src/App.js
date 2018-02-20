@@ -14,10 +14,11 @@ class App extends Component {
       waitingForOperand: false
     };
 
-    this.inputDigit = this.inputDigit.bind(this);
+    this.handleInputDigit = this.handleInputDigit.bind(this);
+    this.handleInputOperator = this.handleInputOperator.bind(this);
   }
 
-  inputDigit(digit) {
+  handleInputDigit(digit) {
     const { displayValue, waitingForOperand } = this.state;
 
     if (waitingForOperand) {
@@ -33,12 +34,38 @@ class App extends Component {
     }
   }
 
+  handleInputOperator(nextOperator) {
+    const { value, displayValue, operator } = this.state;
+    const inputValue = parseFloat(displayValue);
+
+    if (value === null) {
+      this.setState({
+        value: inputValue
+      });
+    } else if (operator) {
+      const currentValue = value || 0;
+      const newValue = calculate[operator](currentValue, inputValue);
+
+      this.setState({
+        waitingForOperand: true,
+        operator: nextOperator
+      });
+    }
+
+    this.setState({
+      waitingForOperand: true,
+      operator: nextOperator
+    });
+  }
+
   render() {
+    const { displayValue } = this.state;
     return (
       <div className="App">
-        <Display operation={this.state.operation} />
+        <Display displayValue={displayValue} />
         <Frame
-          inputDigit={this.inputDigit}
+          handleInputDigit={this.handleInputDigit}
+          handleInputOperator={this.handleInputOperator}
           onClick={event => this.handleButtonClick(event)}
         />
       </div>
