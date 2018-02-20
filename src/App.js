@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import Frame from './Frame';
 import Display from './Display';
-import { calculate } from './operations';
+
+const calculate = {
+  '/': (prevValue, nextValue) => prevValue / nextValue,
+  '*': (prevValue, nextValue) => prevValue * nextValue,
+  '+': (prevValue, nextValue) => prevValue + nextValue,
+  '-': (prevValue, nextValue) => prevValue - nextValue,
+  '%': (prevValue, nextValue) => prevValue % nextValue,
+  '=': (prevValue, nextValue) => nextValue
+};
 
 class App extends Component {
   constructor(props) {
@@ -16,6 +24,23 @@ class App extends Component {
 
     this.handleInputDigit = this.handleInputDigit.bind(this);
     this.handleInputOperator = this.handleInputOperator.bind(this);
+    this.handleInputClearAll = this.handleInputClearAll.bind(this);
+    this.handleClearDisplay = this.handleClearDisplay.bind(this);
+  }
+
+  handleInputClearAll() {
+    this.setState({
+      value: null,
+      displayValue: '0',
+      operator: null,
+      waitingForOperand: false
+    });
+  }
+
+  handleClearDisplay() {
+    this.setState({
+      displayValue: '0'
+    });
   }
 
   handleInputDigit(digit) {
@@ -47,8 +72,8 @@ class App extends Component {
       const newValue = calculate[operator](currentValue, inputValue);
 
       this.setState({
-        waitingForOperand: true,
-        operator: nextOperator
+        value: newValue,
+        displayValue: String(newValue)
       });
     }
 
@@ -66,6 +91,7 @@ class App extends Component {
         <Frame
           handleInputDigit={this.handleInputDigit}
           handleInputOperator={this.handleInputOperator}
+          handleInputClearAll={this.handleInputClearAll}
           onClick={event => this.handleButtonClick(event)}
         />
       </div>
