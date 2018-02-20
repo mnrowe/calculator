@@ -5,6 +5,7 @@
   font-weight: bold;
   line-height: 34px;
   margin: 4px;
-  flex: 1 1 120px;
+  width: 50px;
+  text-align: center;
 }
 
