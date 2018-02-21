@@ -9,10 +9,6 @@ const Frame = ({
 }) => {
   return (
     <div className="Frame">
-      <div className="frame-row" />
-      <Button className="button-clear" onClick={() => handleInputClearAll()}>
-        C
-      </Button>
       <div className="frame-row">
         <Button className="button-7" onClick={() => handleInputDigit(7)}>
           7
@@ -34,23 +30,40 @@ const Frame = ({
         <Button className="button-5" onClick={() => handleInputDigit(5)}>
           5
         </Button>
-        <Button className="button-6" onClick={() => handleInputDigit(6)}>
+        <Button className="button-6" onClick={() => handleInputDigit(7)}>
           6
         </Button>
-        <Button
-          className="button-multiply"
-          onClick={() => handleInputOperator('*')}
-        >
+        <Button className="button-*" onClick={() => handleInputOperator('*')}>
           *
         </Button>
-        <div className="frame-row">
-          <Button
-            className="button-equals"
-            onClick={() => handleInputOperator('=')}
-          >
-            =
-          </Button>
-        </div>
+      </div>
+      <div className="frame-row">
+        <Button className="button-1" onClick={() => handleInputDigit(1)}>
+          1
+        </Button>
+        <Button className="button-2" onClick={() => handleInputDigit(2)}>
+          2
+        </Button>
+        <Button className="button-3" onClick={() => handleInputDigit(3)}>
+          3
+        </Button>
+        <Button className="button--" onClick={() => handleInputOperator('-')}>
+          -
+        </Button>
+      </div>
+      <div className="frame-row">
+        <Button className="button-0" onClick={() => handleInputDigit(0)}>
+          0
+        </Button>
+        <Button className="button--" onClick={() => handleInputOperator('.')}>
+          .
+        </Button>
+        <Button className="button--" onClick={() => handleInputOperator('=')}>
+          =
+        </Button>
+        <Button className="button--" onClick={() => handleInputOperator('+')}>
+          +
+        </Button>
       </div>
     </div>
   );
