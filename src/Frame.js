@@ -10,6 +10,11 @@ const Frame = ({
   return (
     <div className="Frame">
       <div className="frame-row">
+        <Button className="button-clear" onClick={() => handleInputClearAll()}>
+          AC
+        </Button>
+      </div>
+      <div className="frame-row">
         <Button className="button-7" onClick={() => handleInputDigit(7)}>
           7
         </Button>
