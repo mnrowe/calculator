@@ -9,3 +9,9 @@
   text-align: center;
 }
 
+.button-clear {
+  width: 100px; 
+  position: relative;
+  left: 53%;
+}
+
