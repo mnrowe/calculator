@@ -1,17 +1,10 @@
-.Button {
+.Key {
   background: #fff;
   border: 1px solid #999;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  margin: 4px;
-  width: 50px;
   text-align: center;
-}
-
-.button-clear {
-  width: 100px; 
-  position: relative;
-  left: 53%;
+  width: 50px;
 }
 
