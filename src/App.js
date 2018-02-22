@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Frame from './Frame';
 import Display from './Display';
-
-const calculate = {
-  '/': (prevValue, nextValue) => prevValue / nextValue,
-  '*': (prevValue, nextValue) => prevValue * nextValue,
-  '+': (prevValue, nextValue) => prevValue + nextValue,
-  '-': (prevValue, nextValue) => prevValue - nextValue,
-  '%': (prevValue, nextValue) => prevValue % nextValue,
-  '=': (prevValue, nextValue) => nextValue
-};
+import calculate from './operations';
 
 class App extends Component {
   constructor(props) {
