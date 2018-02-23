@@ -39,7 +39,7 @@ const Frame = ({
         <Key className="button-5" onClick={() => handleInputDigit(5)}>
           5
         </Key>
-        <Key className="button-6" onClick={() => handleInputDigit(7)}>
+        <Key className="button-6" onClick={() => handleInputDigit(6)}>
           6
         </Key>
         <Key className="button-*" onClick={() => handleInputOperator('*')}>
