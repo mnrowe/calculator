@@ -9,4 +9,12 @@
   margin: 2px;
 }
 
+.ui.button.button-clear {
+  width: 100px;
+}
+
+.frame-row:first-child {
+  display: flex;
+  flex-direction: row-reverse;
+}
 
