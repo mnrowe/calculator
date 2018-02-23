@@ -1,11 +1,10 @@
 .App {
   display: flex;
-  outline: 1px solid #000;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 
+  0 0 0 1px rgba(0,0,0,0.08);
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 60px;
-  background-color: lavenderblush;
 }
 
 
