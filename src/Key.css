@@ -4,9 +4,17 @@
   font-weight: bold;
   line-height: 34px;
   text-align: center;
-  background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#e2e2e2));
   width: 60px;
   margin: 2px;
 }
 
+.ui.button.button-clear {
+  width: 100px;
+}
+
+.frame-row:first-child {
+  display: flex;
+  flex-direction: row-reverse;
+}
 

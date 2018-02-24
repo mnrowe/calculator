@@ -39,7 +39,7 @@ const Frame = ({
         <Key className="button-5" onClick={() => handleInputDigit(5)}>
           5
         </Key>
-        <Key className="button-6" onClick={() => handleInputDigit(7)}>
+        <Key className="button-6" onClick={() => handleInputDigit(6)}>
           6
         </Key>
         <Key className="button-*" onClick={() => handleInputOperator('*')}>
@@ -56,7 +56,7 @@ const Frame = ({
         <Key className="button-3" onClick={() => handleInputDigit(3)}>
           3
         </Key>
-        <Key className="button--" onClick={() => handleInputOperator('-')}>
+        <Key className="button-minus" onClick={() => handleInputOperator('-')}>
           -
         </Key>
       </div>
@@ -64,13 +64,13 @@ const Frame = ({
         <Key className="button-0" onClick={() => handleInputDigit(0)}>
           0
         </Key>
-        <Key className="button--" onClick={() => handleInputOperator('.')}>
+        <Key className="button-dot" onClick={() => handleInputOperator('.')}>
           .
         </Key>
-        <Key className="button--" onClick={() => handleInputOperator('=')}>
+        <Key className="button-equals" onClick={() => handleInputOperator('=')}>
           =
         </Key>
-        <Key className="button--" onClick={() => handleInputOperator('+')}>
+        <Key className="button-plus" onClick={() => handleInputOperator('+')}>
           +
         </Key>
       </div>
